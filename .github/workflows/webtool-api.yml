@@ -60,6 +60,6 @@ jobs:
         if: github.event_name != 'pu'
         uses: docker/build-push-action@v3
         with:
-          context: ./api
+          context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
