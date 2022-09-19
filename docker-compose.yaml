@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  api:
+    build:
+      context: ./api
+      target: ${ENV}
+    volumes:
+      - ./api/webtools/:/go/webtools
+    ports:
+      - 4000:80
+    env_file:
+      - ./.${ENV}.env
