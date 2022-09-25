@@ -51,7 +51,7 @@ func NewRouter() *gin.Engine {
 var routes = []Route{
 	{
 		"死活監視",
-		http.MethodHead,
+		http.MethodGet,
 		"/v1/ping",
 		func(c *gin.Context) {},
 	},
