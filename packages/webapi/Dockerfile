@@ -4,6 +4,8 @@ WORKDIR /webapi/
 
 COPY webtools/ /webapi/
 
+RUN yarn install
+
 CMD [ "yarn", "run", "start:debug" ]
 
 FROM ghcr.io/ms-naughty-ghost/dev-docker-image-nestjs:0.1.0 as builder
@@ -11,7 +13,7 @@ FROM ghcr.io/ms-naughty-ghost/dev-docker-image-nestjs:0.1.0 as builder
 WORKDIR /webapi/
 
 COPY webtools/ /webapi/
-
+RUN yarn install
 RUN yarn run prebuild
 RUN yarn run build
 
