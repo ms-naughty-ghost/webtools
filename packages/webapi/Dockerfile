@@ -23,6 +23,6 @@ WORKDIR /webapi/
 
 COPY --from=builder /webapi/dist/ /webapi/dist/
 
-EXPOSE 4000
+EXPOSE 80
 
 CMD [ "node", "dist/main" ]
