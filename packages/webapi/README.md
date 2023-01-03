@@ -1,0 +1,5 @@
+## Dockerfileについて
+develop環境とproduction環境では起動方法を変えています。
+
+develop環境では開発をスムーズに行うためにwatchモードとデバッグをオンにします。
+production環境では最低限の起動環境を整えています。
