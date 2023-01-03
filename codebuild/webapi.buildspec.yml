@@ -5,6 +5,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - cd packages/webapi
       - wget -q https://github.com/tomodian/release/releases/download/0.13.0/release_linux_amd64.zip -O release.zip
       - unzip release.zip
       - export IMAGE_TAG=$(./release latest --any | tr -d '\n')
